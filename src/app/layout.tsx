@@ -18,7 +18,7 @@ const notoSerif = Noto_Serif_TC({
 export const metadata: Metadata = {
   title: `${SHOP.name} | ${SHOP.alias} · 台中南屯手沖咖啡`,
   description:
-    "十三咖啡（13Gabee）台中南屯秘境石頭屋咖啡廳。無菜單手沖單品、環中路五段200號。本站為琬奧科技 Demo，資料來自公開來源。",
+    "十三咖啡（13Gabee）台中南屯秘境石頭屋咖啡廳。無菜單手沖單品、環中路五段200號。本站為琢奧科技 Demo，資料來自公開來源。",
   openGraph: {
     title: `${SHOP.name} | 台中南屯手沖咖啡`,
     description: "秘境石頭屋咖啡空間 · 僅手沖單品 · Demo 示範網站",
