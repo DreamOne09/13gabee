@@ -34,13 +34,13 @@ h3 {
   font-family: var(--font-heading);
   line-height: 1.12;
   margin: 0 0 var(--space-2);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--tracking-display);
   text-wrap: balance; /* nicer multi-line headings, ignored by old browsers */
 }
 
 h1 {
   font-size: var(--text-h1);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 h2 {
@@ -110,10 +110,11 @@ a:hover {
 
 /* Section eyebrow: small uppercase label with an accent dash, used above h2s */
 .section-eyebrow {
-  color: var(--color-accent);
-  font-weight: 700;
+  color: var(--color-copper-bright);
+  font-family: var(--font-heading);
+  font-weight: 600;
   text-transform: none;
-  letter-spacing: 0.06em;
+  letter-spacing: var(--tracking-wide);
   font-size: 0.85rem;
   margin: 0 0 var(--space-1);
 }
