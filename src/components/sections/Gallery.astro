@@ -1,8 +1,4 @@
 ---
-// Gallery section: asymmetric grid — the first image is featured (2×2),
-// the rest tile around it. Lazy loading, gentle hover zoom with a warm
-// bottom gradient (both disabled under prefers-reduced-motion / touch).
-// Tip: 5 or 7 images fill the desktop grid perfectly.
 import { SITE } from "../../config/site";
 import { asset } from "../../lib/paths";
 
@@ -26,10 +22,10 @@ const { gallery } = SITE;
               height="300"
               class="gallery-image"
             />
-            <span class="gallery-wm">{SITE.vi.imageWatermark}</span>
           </figure>
         ))
       }
+      <p class="gallery-demo-once" aria-hidden="true">{SITE.vi.imageWatermark}</p>
     </div>
   </div>
 </section>
@@ -51,6 +47,20 @@ const { gallery } = SITE;
     grid-template-columns: repeat(6, 1fr);
     grid-auto-rows: minmax(140px, 1fr);
     gap: 0.65rem;
+    position: relative;
+  }
+
+  .gallery-demo-once {
+    position: absolute;
+    right: 0.25rem;
+    bottom: 0.15rem;
+    z-index: 3;
+    margin: 0;
+    font-size: 0.48rem;
+    letter-spacing: 0.06em;
+    color: rgba(74, 61, 50, 0.28);
+    pointer-events: none;
+    user-select: none;
   }
 
   .gallery-item:first-child {
@@ -76,19 +86,6 @@ const { gallery } = SITE;
     position: relative;
   }
 
-  .gallery-wm {
-    position: absolute;
-    right: 0.4rem;
-    bottom: 0.4rem;
-    z-index: 2;
-    font-size: 0.5rem;
-    letter-spacing: 0.04em;
-    color: rgba(255, 255, 255, 0.45);
-    background: transparent;
-    padding: 0;
-    pointer-events: none;
-  }
-
   .gallery-image {
     width: 100%;
     height: 100%;
@@ -96,7 +93,6 @@ const { gallery } = SITE;
     transition: transform 420ms ease;
   }
 
-  /* Warm gradient sweeping up from the bottom on hover */
   .gallery-item::after {
     content: "";
     position: absolute;

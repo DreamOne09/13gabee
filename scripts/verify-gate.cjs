@@ -60,6 +60,9 @@ async function run() {
   await page.locator("#demo-gate").waitFor({ state: "detached", timeout: 5000 });
 
   const legalBanner = await page.locator(".legal-chrome-summary").textContent();
+  const heroCtaCount = await page.locator(".hero-actions .hero-cta").count();
+  const heroWmCount = await page.locator(".hero-watermark").count();
+  const perImageWm = await page.locator(".gallery-wm").count();
 
   const aboveFold = {};
   for (const cta of ["tel", "fb"]) {
@@ -85,7 +88,10 @@ async function run() {
       htmlLocked,
       blockedUntilUnlock: blocked,
       wrongPasswordShowsError: errorVisible,
-      legalBannerIncludes: legalBanner?.includes("未授權公開"),
+      legalBannerIncludes: legalBanner?.includes("非官方"),
+      heroCtaCount,
+      heroWatermarkCount: heroWmCount,
+      galleryPerImageWatermarkCount: perImageWm,
       dualCtaAboveFold: aboveFold.tel && aboveFold.fb,
     })
   );
