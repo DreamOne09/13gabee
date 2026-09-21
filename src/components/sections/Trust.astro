@@ -1,0 +1,99 @@
+---
+import { SITE } from "../../config/site";
+
+const { trust } = SITE;
+---
+
+<section id="trust" class="section section-alt">
+  <div class="container">
+    {trust.eyebrow && <p class="section-eyebrow">{trust.eyebrow}</p>}
+    <h2>{trust.title}</h2>
+    <p class="intro">{trust.intro}</p>
+
+    <div class="trust-actions reveal">
+      {
+        trust.actions.map((action) => (
+          <a
+            class:list={["button", action.variant === "secondary" && "button-secondary"]}
+            href={action.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {action.label}
+          </a>
+        ))
+      }
+    </div>
+
+    <ul class="trust-list">
+      {
+        trust.items.map((item) => (
+          <li class="trust-item reveal">
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .intro {
+    color: var(--color-text-muted);
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-3);
+    max-width: 40rem;
+  }
+
+  .trust-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-bottom: var(--space-4);
+  }
+
+  @media (min-width: 480px) {
+    .trust-actions {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  .trust-actions .button {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .trust-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  @media (min-width: 768px) {
+    .trust-list {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-4);
+    }
+  }
+
+  .trust-item {
+    border-top: 2px solid var(--color-border);
+    padding-top: var(--space-2);
+  }
+
+  .trust-item h3 {
+    font-size: var(--text-h3);
+  }
+
+  .trust-item p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+</style>

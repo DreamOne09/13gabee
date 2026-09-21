@@ -1,0 +1,79 @@
+---
+import { SITE } from "../../config/site";
+
+const { experience } = SITE;
+---
+
+<section id="experience" class="section section-compact">
+  <div class="container">
+    {experience.eyebrow && <p class="section-eyebrow">{experience.eyebrow}</p>}
+    <h2>{experience.title}</h2>
+    <p class="intro">{experience.intro}</p>
+
+    <ul class="experience-list">
+      {
+        experience.items.map((item, i) => (
+          <li>
+            <span class="experience-index" aria-hidden="true">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .section-compact {
+    padding-block: calc(var(--space-section) * 0.65);
+    background: var(--color-surface-alt);
+  }
+
+  .intro {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-3);
+    max-width: 40rem;
+  }
+
+  .experience-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  @media (min-width: 768px) {
+    .experience-list {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-3);
+    }
+  }
+
+  .experience-list li {
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-2);
+  }
+
+  .experience-index {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--color-label-muted);
+  }
+
+  .experience-list h3 {
+    font-size: 1.05rem;
+    margin: 0.5rem 0 0.35rem;
+  }
+
+  .experience-list p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+</style>
