@@ -99,19 +99,15 @@ export const SITE = {
     title: "石頭屋裡的一杯手沖",
     titleHighlight: "",
     subtitle: "無菜單單品 · 南屯秘境 · 電話或粉專確認營業",
-    image: "/photos/20260728132526-68c4a2dd.jpg",
-    imageAlt: "十三咖啡石頭屋建築外觀與庭園",
+    image: "/photos/1787653555_0ab690cedf0076392c42458dbfbe107a.jpg",
+    imageAlt: "十三咖啡手沖單品與杯皿氛圍",
     eyebrow: "台中南屯 · 秘境咖啡",
     primaryCta: { label: "撥打電話", href: "tel:+886917646373" },
     secondaryCta: {
       label: "Facebook 粉專",
       href: "https://www.facebook.com/13Gabee/",
     },
-    tertiaryCta: {
-      label: "Google 地圖導航",
-      href: "https://maps.google.com/?q=十三咖啡+台中市南屯區環中路五段200號",
-    },
-    highlights: ["僅手沖單品", "石頭堆砌的庭園空間"] as string[],
+    highlights: ["僅手沖單品", "室內慢坐氛圍"] as string[],
   },
 
   experience: {
@@ -154,50 +150,36 @@ export const SITE = {
 
   gallery: {
     eyebrow: "空間",
-    title: "建築、庭園與手沖",
-    lead: "以下照片來自食尚玩家、婷玩味生活等公開報導，呈現十三咖啡的建築、庭園與手沖咖啡氛圍。",
+    title: "手沖、室內與石頭屋",
+    lead: "先看咖啡與室內氛圍；石頭屋建築與庭園影像收在後段。公開報導整理，僅供 Demo。",
     images: [
-      {
-        src: "/photos/20260728132526-68c4a2dd.jpg",
-        alt: "十三咖啡石頭屋建築外觀",
-        source: "食尚玩家",
-        sourceUrl: "https://supertaste.tvbs.com.tw/infocard/33852",
-      },
-      {
-        src: "/photos/20260728132541-c52a8d28.jpg",
-        alt: "十三咖啡庭院與植栽",
-        source: "食尚玩家",
-        sourceUrl: "https://supertaste.tvbs.com.tw/infocard/33852",
-      },
-      {
-        src: "/photos/20260728100921-000742e0.jpg",
-        alt: "十三咖啡戶外座位區",
-        source: "食尚玩家",
-        sourceUrl: "https://supertaste.tvbs.com.tw/infocard/33852",
-      },
       {
         src: "/photos/1787653555_0ab690cedf0076392c42458dbfbe107a.jpg",
         alt: "十三咖啡手沖咖啡",
-        source: "食尚玩家",
-        sourceUrl: "https://supertaste.tvbs.com.tw/infocard/33852",
       },
       {
         src: "/photos/1787653556_fa7038d6a6c64a091ac8a29584296e39.jpg",
         alt: "十三咖啡室內空間",
-        source: "食尚玩家",
-        sourceUrl: "https://supertaste.tvbs.com.tw/infocard/33852",
       },
       {
-        src: "/photos/ating-20200924201321_9.jpg",
-        alt: "十三咖啡石牆與木作窗框",
-        source: "婷玩味生活",
-        sourceUrl: "https://ating.tw/13gabee/",
+        src: "/photos/ating-20200924195146_58.jpg",
+        alt: "十三咖啡手沖器具",
       },
       {
-        src: "/photos/ating-20200924192418_77.jpg",
-        alt: "十三咖啡庭園一角",
-        source: "婷玩味生活",
-        sourceUrl: "https://ating.tw/13gabee/",
+        src: "/photos/ating-20200924192759_51.jpg",
+        alt: "十三咖啡環境氛圍",
+      },
+      {
+        src: "/photos/20260728132526-68c4a2dd.jpg",
+        alt: "十三咖啡石頭屋建築外觀",
+      },
+      {
+        src: "/photos/20260728132541-c52a8d28.jpg",
+        alt: "十三咖啡庭院與植栽",
+      },
+      {
+        src: "/photos/20260728100921-000742e0.jpg",
+        alt: "十三咖啡戶外座位區",
       },
     ],
   },
