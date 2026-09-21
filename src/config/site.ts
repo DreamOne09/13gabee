@@ -99,8 +99,8 @@ export const SITE = {
     title: "石頭屋裡的一杯手沖",
     titleHighlight: "",
     subtitle: "無菜單單品 · 南屯秘境 · 電話或粉專確認營業",
-    image: "/photos/demo-hero-pour-cup.jpg",
-    imageAlt: "手持咖啡杯特寫（示意素材，非店家現場拍攝）",
+    image: "/photos/cup-ating-iced-plumeria.jpg",
+    imageAlt: "十三咖啡第一杯冰單品黑咖啡杯面（婷玩味生活公開報導）",
     eyebrow: "台中南屯 · 秘境咖啡",
     primaryCta: { label: "撥打電話", href: "tel:+886917646373" },
     secondaryCta: {
@@ -154,16 +154,20 @@ export const SITE = {
     lead: "室內用餐與石頭屋建築、庭園影像（公開報導整理）。",
     images: [
       {
-        src: "/photos/20260728132541-c52a8d28.jpg",
-        alt: "十三咖啡室內用餐氛圍",
+        src: "/photos/cup-ating-iced-plumeria.jpg",
+        alt: "十三咖啡第一杯冰單品黑咖啡杯面",
+      },
+      {
+        src: "/photos/cup-ating-indoor-plumeria.jpg",
+        alt: "十三咖啡室內單品黑咖啡杯面",
+      },
+      {
+        src: "/photos/cup-ating-hand-tasting.jpg",
+        alt: "十三咖啡單品黑咖啡品飲特寫",
       },
       {
         src: "/photos/1787653556_fa7038d6a6c64a091ac8a29584296e39.jpg",
         alt: "十三咖啡戶外庭園與建築",
-      },
-      {
-        src: "/photos/ating-20200924195146_58.jpg",
-        alt: "十三咖啡石頭屋外觀",
       },
       {
         src: "/photos/ating-20200924192759_51.jpg",
@@ -174,8 +178,8 @@ export const SITE = {
         alt: "十三咖啡石頭屋建築外觀",
       },
       {
-        src: "/photos/20260728100921-000742e0.jpg",
-        alt: "十三咖啡戶外座位與造景",
+        src: "/photos/ating-20200924201321_9.jpg",
+        alt: "十三咖啡石頭屋外觀與庭園",
       },
     ],
   },
