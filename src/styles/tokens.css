@@ -1,48 +1,60 @@
 :root {
-  /* 十三咖啡 — 石頭屋／暖木／琥珀（對標 haven 行銷站質感） */
-  --color-ink-navy: #1a1612;
-  --color-charcoal: #252018;
-  --color-charcoal-soft: #342b22;
-  --color-wood: #f4ede4;
-  --color-wood-deep: #e8ddd0;
-  --color-label-muted: #8b7355;
-  --color-copper: #8b7355;
-  --color-copper-bright: #a89272;
+  /* 十三咖啡 — 文藝復興：深赭／金箔／羊皮紙 */
+  --color-ink-navy: #2a1c12;
+  --color-charcoal: #352618;
+  --color-charcoal-soft: #453226;
+  --color-wood: #ebe2cf;
+  --color-wood-deep: #e0d4bc;
+  --color-parchment: #f3ead8;
+  --color-label-muted: #7a6248;
+  --color-copper: #8b6b42;
+  --color-copper-bright: #b89558;
+  --color-gold-leaf: #c9a962;
+  --color-gold-bright: #e0c878;
+  --color-ochre-deep: #3a2618;
+  --color-sienna-veil: rgba(58, 38, 24, 0.82);
 
-  --color-bg: var(--color-wood);
-  --color-surface: #faf6f0;
+  --color-bg: var(--color-parchment);
+  --color-surface: #faf4e8;
   --color-surface-alt: var(--color-wood-deep);
   --color-text: var(--color-charcoal);
-  --color-text-muted: #4a3d32;
-  --color-accent: #5c4a38;
-  --color-accent-hover: #6e5842;
-  --color-on-accent: #faf6f0;
-  --color-border: #cfc6b8;
-  --color-rating: var(--color-copper);
+  --color-text-muted: #524336;
+  --color-accent: #5c4228;
+  --color-accent-hover: #6e5030;
+  --color-on-accent: #faf4e8;
+  --color-border: #d4c4a8;
+  --color-rating: var(--color-copper-bright);
 
-  --color-dark-bg: var(--color-ink-navy);
+  --color-dark-bg: var(--color-ochre-deep);
   --color-dark-surface: var(--color-charcoal-soft);
-  --color-dark-text: #f4ede4;
-  --color-dark-text-muted: #c4b5a5;
-  --color-accent-bright: var(--color-copper-bright);
+  --color-dark-text: #f5ead8;
+  --color-dark-text-muted: #d4c4a8;
+  --color-accent-bright: var(--color-gold-bright);
 
-  --color-hero-veil: rgba(26, 22, 18, 0.78);
+  --color-hero-veil: rgba(42, 28, 18, 0.72);
   --color-fb-brand: #1877f2;
 
-  --gradient-accent: linear-gradient(135deg, #a89272 0%, #8b7355 100%);
-  --gradient-icon: linear-gradient(135deg, #6e5842 0%, #4a3d32 100%);
+  --gradient-accent: linear-gradient(
+    128deg,
+    var(--color-gold-bright) 0%,
+    var(--color-gold-leaf) 42%,
+    var(--color-copper-bright) 100%
+  );
+  --gradient-icon: linear-gradient(135deg, #6e5030 0%, #453226 100%);
 
-  --font-display: "Noto Serif TC", Georgia, "Songti TC", serif;
+  --font-display: "Cormorant Garamond", "Noto Serif TC", "Songti TC", Georgia, serif;
   --font-heading: var(--font-display);
   --font-body: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", sans-serif;
   --text-base: 1rem;
   --text-sm: 0.875rem;
   --text-lg: 1.3125rem;
-  --text-h1: clamp(2rem, 6vw, 3.75rem);
+  --text-h1: clamp(2.15rem, 6.5vw, 4rem);
   --text-h2: clamp(1.75rem, 3.8vw, 2.65rem);
   --text-h3: 1.25rem;
   --leading: 1.65;
-  --tracking-wide: 0.1em;
+  --tracking-display: 0.06em;
+  --tracking-wide: 0.12em;
+  --prose-measure: 58ch;
 
   --space-1: 0.5rem;
   --space-2: 1rem;
@@ -52,11 +64,11 @@
   --radius: 10px;
   --radius-sm: 8px;
   --radius-pill: 999px;
-  --shadow: 0 2px 16px rgba(26, 22, 18, 0.06);
-  --shadow-lift: 0 20px 48px rgba(26, 22, 18, 0.14);
-  --shadow-glow: 0 10px 32px rgba(92, 74, 56, 0.35);
+  --shadow: 0 2px 16px rgba(42, 28, 18, 0.07);
+  --shadow-lift: 0 20px 48px rgba(42, 28, 18, 0.14);
+  --shadow-glow: 0 10px 36px rgba(139, 107, 66, 0.42);
   --site-sticky-offset: 7.25rem;
   --content-width: 1200px;
-  --prose-width: 62ch;
+  --prose-width: var(--prose-measure);
   --transition: 220ms ease;
 }

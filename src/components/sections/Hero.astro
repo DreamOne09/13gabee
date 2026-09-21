@@ -6,28 +6,33 @@ const { hero } = SITE;
 const heroImage = asset(hero.image);
 ---
 
-<section class="hero-immersive" aria-labelledby="hero-title">
-  <img
-    src={heroImage}
-    alt={hero.imageAlt}
-    class="hero-backdrop"
-    width="1920"
-    height="1280"
-    fetchpriority="high"
-    decoding="async"
-  />
+<section class="hero-immersive" aria-labelledby="hero-title" data-hero-canvas>
+  <div class="hero-canvas" id="hero-reveal-canvas">
+    <img
+      src={heroImage}
+      alt={hero.imageAlt}
+      class="hero-backdrop"
+      width="1920"
+      height="1280"
+      fetchpriority="high"
+      decoding="async"
+    />
+    <div class="hero-chiaroscuro" aria-hidden="true"></div>
+  </div>
 
   <div class="container hero-stage">
-    <div class="hero-text" id="hero-beat-root">
-      <p class="hero-eyebrow">{hero.eyebrow}</p>
-      <h1 id="hero-title">{hero.title}</h1>
-      <p class="hero-oneline">{hero.subtitle}</p>
+    <div class="hero-text">
+      <div class="hero-copy" id="hero-reveal-copy">
+        <p class="hero-eyebrow">{hero.eyebrow}</p>
+        <h1 id="hero-title">{hero.title}</h1>
+        <p class="hero-oneline">{hero.subtitle}</p>
 
-      <ul class="hero-highlights" aria-label="特色摘要">
-        {hero.highlights.map((h) => <li>{h}</li>)}
-      </ul>
+        <ul class="hero-highlights" aria-label="特色摘要">
+          {hero.highlights.map((h) => <li>{h}</li>)}
+        </ul>
+      </div>
 
-      <div class="hero-actions">
+      <div class="hero-actions" id="hero-reveal-cta">
         <a class="hero-cta hero-cta--primary" href={hero.primaryCta.href} data-cta="tel">
           {hero.primaryCta.label}
         </a>
@@ -52,15 +57,22 @@ const heroImage = asset(hero.image);
 <script>
   import gsap from "gsap";
 
-  const root = document.getElementById("hero-beat-root");
-  if (root && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    gsap.from(root, {
-      opacity: 0,
-      y: 28,
-      duration: 0.9,
-      ease: "power2.out",
-      delay: 0.15,
-    });
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const canvas = document.querySelector<HTMLElement>("[data-hero-canvas]");
+  const copy = document.getElementById("hero-reveal-copy");
+  const cta = document.getElementById("hero-reveal-cta");
+  const backdropLayer = document.getElementById("hero-reveal-canvas");
+
+  if (!reduced && canvas && copy && cta && backdropLayer) {
+    gsap.set([backdropLayer, copy, cta], { opacity: 0 });
+    gsap.set(backdropLayer, { y: 10 });
+    gsap.set(copy, { y: 18 });
+    gsap.set(cta, { y: 14 });
+
+    const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+    tl.to(backdropLayer, { opacity: 1, y: 0, duration: 0.95 }, 0)
+      .to(copy, { opacity: 1, y: 0, duration: 0.82 }, 0.12)
+      .to(cta, { opacity: 1, y: 0, duration: 0.72 }, 0.58);
   }
 </script>
 
@@ -78,6 +90,13 @@ const heroImage = asset(hero.image);
     padding-block: 0;
   }
 
+  .hero-canvas {
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+    pointer-events: none;
+  }
+
   .hero-backdrop {
     position: absolute;
     inset: 0;
@@ -85,17 +104,32 @@ const heroImage = asset(hero.image);
     height: 100%;
     object-fit: cover;
     object-position: center 35%;
-    z-index: -3;
   }
 
-  .hero-immersive::before {
-    content: "";
+  .hero-chiaroscuro {
     position: absolute;
     inset: 0;
-    z-index: -2;
     background:
-      linear-gradient(180deg, rgba(26, 22, 18, 0.55) 0%, rgba(26, 22, 18, 0.25) 38%, rgba(26, 22, 18, 0.9) 100%),
-      linear-gradient(105deg, rgba(26, 22, 18, 0.92) 0%, rgba(26, 22, 18, 0.5) 48%, rgba(26, 22, 18, 0.2) 100%);
+      radial-gradient(
+        ellipse 48% 52% at 62% 38%,
+        rgba(255, 236, 210, 0.22) 0%,
+        rgba(80, 52, 32, 0.08) 38%,
+        transparent 58%
+      ),
+      radial-gradient(
+        ellipse 120% 95% at 50% 50%,
+        transparent 22%,
+        rgba(42, 26, 16, 0.55) 72%,
+        rgba(32, 20, 12, 0.88) 100%
+      ),
+      linear-gradient(
+        102deg,
+        rgba(36, 22, 14, 0.92) 0%,
+        rgba(48, 30, 18, 0.62) 32%,
+        rgba(28, 18, 12, 0.18) 58%,
+        rgba(22, 14, 10, 0.45) 100%
+      );
+    mix-blend-mode: multiply;
   }
 
   .hero-stage {
@@ -109,29 +143,43 @@ const heroImage = asset(hero.image);
   }
 
   .hero-text {
-    max-width: 36rem;
+    max-width: 38rem;
   }
 
   .hero-eyebrow {
     margin: 0 0 var(--space-2);
-    font-size: 0.75rem;
-    letter-spacing: 0.14em;
-    color: var(--color-dark-text-muted);
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--color-gold-bright);
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45);
   }
 
   .hero-immersive h1 {
+    font-family: var(--font-heading);
+    font-weight: 600;
     color: var(--color-dark-text);
-    margin-bottom: 0.35rem;
-    font-size: clamp(1.85rem, 8vw, 3.25rem);
-    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+    margin-bottom: 0.45rem;
+    font-size: clamp(2.1rem, 8.5vw, 3.65rem);
+    letter-spacing: var(--tracking-display);
+    line-height: 1.08;
+    text-shadow:
+      0 2px 28px rgba(0, 0, 0, 0.5),
+      0 0 40px rgba(42, 28, 18, 0.35);
   }
 
   .hero-oneline {
-    font-size: var(--text-base);
-    color: var(--color-dark-text);
-    max-width: 26rem;
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    line-height: 1.55;
+    color: rgba(245, 234, 216, 0.94);
+    max-width: var(--prose-measure);
     margin-bottom: var(--space-2);
-    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 1px 16px rgba(0, 0, 0, 0.45);
   }
 
   .hero-highlights {
@@ -147,9 +195,9 @@ const heroImage = asset(hero.image);
     font-size: 0.75rem;
     padding: 0.25rem 0.65rem;
     border-radius: var(--radius-pill);
-    border: 1px solid rgba(168, 146, 114, 0.35);
+    border: 1px solid rgba(201, 169, 98, 0.42);
     color: var(--color-dark-text-muted);
-    background: rgba(26, 22, 18, 0.35);
+    background: rgba(42, 28, 18, 0.38);
   }
 
   .hero-actions {
@@ -192,13 +240,13 @@ const heroImage = asset(hero.image);
     font-size: 0.8125rem;
     font-weight: 600;
     background: transparent;
-    border: 1px solid rgba(244, 237, 228, 0.42);
-    color: rgba(244, 237, 228, 0.92);
+    border: 1px solid rgba(224, 200, 120, 0.45);
+    color: rgba(245, 234, 216, 0.94);
     box-shadow: none;
   }
 
   .hero-cta--ghost:hover {
-    background: rgba(26, 22, 18, 0.45);
+    background: rgba(42, 28, 18, 0.45);
     color: var(--color-dark-text);
   }
 
@@ -217,7 +265,7 @@ const heroImage = asset(hero.image);
 
   @media (min-width: 768px) {
     .hero-oneline {
-      font-size: var(--text-lg);
+      font-size: 1.2rem;
     }
   }
 
@@ -229,6 +277,15 @@ const heroImage = asset(hero.image);
 
     .hero-stage {
       padding-bottom: calc(var(--space-section) * 1.15);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-canvas,
+    .hero-copy,
+    .hero-actions {
+      opacity: 1 !important;
+      transform: none !important;
     }
   }
 </style>
