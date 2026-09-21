@@ -13,7 +13,7 @@ export const SITE = {
     "十三咖啡（13Gabee）台中南屯秘境石頭屋咖啡廳。無菜單手沖單品、環中路五段200號。公開資料 Demo，非店家委託。",
 
   vi: {
-    imageWatermark: "僅供 Demo 使用",
+    imageWatermark: "Demo",
   },
 
   crawl: {
@@ -33,7 +33,7 @@ export const SITE = {
   },
 
   legalChrome: {
-    banner: "提案 Demo｜未授權公開｜非官方站",
+    banner: "Demo 預覽 · 非官方 · 點開說明",
     toggleLabel: "完整免責說明",
     disclaimerTitle: "提案 Demo 免責",
     disclaimerBody:
@@ -99,8 +99,8 @@ export const SITE = {
     title: "石頭屋裡的一杯手沖",
     titleHighlight: "",
     subtitle: "無菜單單品 · 南屯秘境 · 電話或粉專確認營業",
-    image: "/photos/demo-hero-hand-drip.jpg",
-    imageAlt: "黑咖啡杯與萃取器材特寫（示意素材，非店家現場拍攝）",
+    image: "/photos/demo-hero-pour-cup.jpg",
+    imageAlt: "手持咖啡杯特寫（示意素材，非店家現場拍攝）",
     eyebrow: "台中南屯 · 秘境咖啡",
     primaryCta: { label: "撥打電話", href: "tel:+886917646373" },
     secondaryCta: {
@@ -151,7 +151,7 @@ export const SITE = {
   gallery: {
     eyebrow: "空間",
     title: "手沖、室內與石頭屋",
-    lead: "室內用餐與石頭屋建築、庭園影像；公開報導整理，僅供 Demo。",
+    lead: "室內用餐與石頭屋建築、庭園影像（公開報導整理）。",
     images: [
       {
         src: "/photos/20260728132541-c52a8d28.jpg",

@@ -6,8 +6,7 @@ const { legalChrome } = SITE;
 
 <details class="legal-chrome">
   <summary class="legal-chrome-summary">
-    <span class="legal-chrome-banner">{legalChrome.banner}</span>
-    <span class="legal-chrome-hint" aria-hidden="true">· 說明</span>
+    <span>{legalChrome.banner}</span>
   </summary>
   <div class="container legal-chrome-body">
     <p class="legal-chrome-full-title">{legalChrome.disclaimerTitle}</p>
@@ -19,46 +18,32 @@ const { legalChrome } = SITE;
   .legal-chrome {
     background: var(--color-ink-navy);
     color: var(--color-dark-text-muted);
-    border-bottom: 1px solid rgba(245, 241, 234, 0.12);
-    font-size: 0.72rem;
+    border-bottom: 1px solid rgba(245, 241, 234, 0.1);
+    font-size: 0.68rem;
   }
 
   .legal-chrome-summary {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.35rem;
-    padding: 0.45rem var(--space-3);
+    display: block;
+    padding: 0.38rem var(--space-3);
     cursor: pointer;
     list-style: none;
     font-weight: 600;
     color: var(--color-dark-text-muted);
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-align: center;
   }
 
   .legal-chrome-summary::-webkit-details-marker {
     display: none;
   }
 
-  .legal-chrome-banner {
-    color: var(--color-dark-text);
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .legal-chrome-hint {
-    flex-shrink: 0;
-    color: var(--color-copper-bright);
-    font-size: 0.68rem;
-  }
-
   .legal-chrome-body {
-    padding: 0 0 0.65rem;
-    font-size: 0.78rem;
-    line-height: 1.65;
+    padding: 0 0 0.55rem;
+    font-size: 0.75rem;
+    line-height: 1.6;
     max-width: 52rem;
   }
 
@@ -70,13 +55,5 @@ const { legalChrome } = SITE;
 
   .legal-chrome-body p:last-child {
     margin: 0;
-  }
-
-  @media (min-width: 768px) {
-    .legal-chrome-summary {
-      justify-content: space-between;
-      max-width: var(--content-width);
-      margin-inline: auto;
-    }
   }
 </style>

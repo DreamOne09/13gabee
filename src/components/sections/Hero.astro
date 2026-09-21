@@ -2,7 +2,7 @@
 import { SITE } from "../../config/site";
 import { asset } from "../../lib/paths";
 
-const { hero, vi } = SITE;
+const { hero } = SITE;
 const heroImage = asset(hero.image);
 ---
 
@@ -16,7 +16,6 @@ const heroImage = asset(hero.image);
     fetchpriority="high"
     decoding="async"
   />
-  <span class="hero-watermark" aria-hidden="true">{vi.imageWatermark} · 示意影像</span>
 
   <div class="container hero-stage">
     <div class="hero-text" id="hero-beat-root">
@@ -29,11 +28,11 @@ const heroImage = asset(hero.image);
       </ul>
 
       <div class="hero-actions">
-        <a class="button button-hero-primary" href={hero.primaryCta.href} data-cta="tel">
+        <a class="hero-cta hero-cta--primary" href={hero.primaryCta.href} data-cta="tel">
           {hero.primaryCta.label}
         </a>
         <a
-          class="button button-hero-secondary"
+          class="hero-cta hero-cta--ghost"
           href={hero.secondaryCta.href}
           target="_blank"
           rel="noopener noreferrer"
@@ -85,7 +84,7 @@ const heroImage = asset(hero.image);
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 42%;
+    object-position: center 35%;
     z-index: -3;
   }
 
@@ -95,19 +94,8 @@ const heroImage = asset(hero.image);
     inset: 0;
     z-index: -2;
     background:
-      linear-gradient(180deg, rgba(26, 22, 18, 0.55) 0%, rgba(26, 22, 18, 0.25) 38%, rgba(26, 22, 18, 0.88) 100%),
+      linear-gradient(180deg, rgba(26, 22, 18, 0.55) 0%, rgba(26, 22, 18, 0.25) 38%, rgba(26, 22, 18, 0.9) 100%),
       linear-gradient(105deg, rgba(26, 22, 18, 0.92) 0%, rgba(26, 22, 18, 0.5) 48%, rgba(26, 22, 18, 0.2) 100%);
-  }
-
-  .hero-watermark {
-    position: absolute;
-    right: var(--space-2);
-    bottom: 5rem;
-    z-index: 2;
-    font-size: 0.62rem;
-    letter-spacing: 0.08em;
-    color: rgba(244, 237, 228, 0.5);
-    writing-mode: vertical-rl;
   }
 
   .hero-stage {
@@ -167,20 +155,24 @@ const heroImage = asset(hero.image);
   .hero-actions {
     display: flex;
     flex-direction: column;
-    gap: 0.55rem;
+    gap: 0.5rem;
     position: relative;
     z-index: 2;
+    max-width: 20rem;
   }
 
-  .hero-actions .button {
+  .hero-cta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     width: 100%;
+    text-decoration: none;
+    border-radius: var(--radius-pill);
+    transition: filter var(--transition), background var(--transition), border-color var(--transition);
   }
 
-  .button-hero-primary {
+  .hero-cta--primary {
     min-height: 52px;
     font-size: 1rem;
     font-weight: 700;
@@ -190,31 +182,24 @@ const heroImage = asset(hero.image);
     color: var(--color-on-accent);
   }
 
-  .button-hero-primary:hover {
+  .hero-cta--primary:hover {
+    filter: brightness(1.06);
     color: var(--color-on-accent);
-    filter: brightness(1.05);
   }
 
-  .button-hero-secondary {
-    min-height: 44px;
-    font-size: var(--text-sm);
+  .hero-cta--ghost {
+    min-height: 42px;
+    font-size: 0.8125rem;
     font-weight: 600;
-    background: rgba(26, 22, 18, 0.35);
-    border: 1px solid rgba(244, 237, 228, 0.38);
-    color: var(--color-dark-text);
+    background: transparent;
+    border: 1px solid rgba(244, 237, 228, 0.42);
+    color: rgba(244, 237, 228, 0.92);
     box-shadow: none;
   }
 
-  .button-hero-secondary:hover {
-    background: rgba(26, 22, 18, 0.5);
+  .hero-cta--ghost:hover {
+    background: rgba(26, 22, 18, 0.45);
     color: var(--color-dark-text);
-  }
-
-  @media (min-width: 768px) {
-    .hero-actions {
-      flex-direction: column;
-      max-width: 18rem;
-    }
   }
 
   .hero-ridge {
