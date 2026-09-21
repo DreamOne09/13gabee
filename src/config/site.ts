@@ -99,8 +99,8 @@ export const SITE = {
     title: "石頭屋裡的一杯手沖",
     titleHighlight: "",
     subtitle: "無菜單單品 · 南屯秘境 · 出發前請致電確認營業",
-    image: "/photos/demo-hero-hand-drip.jpg",
-    imageAlt: "手沖萃取器材與黑咖啡（公開來源影像，僅供 Demo）",
+    image: "/photos/demo-hero-black-coffee.jpg",
+    imageAlt: "手持小杯黑咖啡與蒸氣（公開來源影像 Kiwi 樂活食旅，僅供 Demo）",
     eyebrow: "台中南屯 · 秘境咖啡",
     primaryCta: { label: "撥打 0917-646-373", href: "tel:+886917646373" },
     highlights: ["僅手沖單品", "室內慢坐氛圍"] as string[],
@@ -150,8 +150,12 @@ export const SITE = {
     lead: "手沖與杯皿在前；石頭屋建築與庭園收在後段（公開報導整理）。",
     images: [
       {
-        src: "/photos/demo-hero-hand-drip.jpg",
-        alt: "手沖萃取器材與黑咖啡（公開來源影像，僅供 Demo）",
+        src: "/photos/demo-siphon-brew.jpg",
+        alt: "店內虹吸壺與杯皿沖煮（公開來源影像 Kiwi 樂活食旅，僅供 Demo）",
+      },
+      {
+        src: "/photos/demo-hero-black-coffee.jpg",
+        alt: "手持小杯黑咖啡液（公開來源影像 Kiwi 樂活食旅，僅供 Demo）",
       },
       {
         src: "/photos/20260728132541-c52a8d28.jpg",
