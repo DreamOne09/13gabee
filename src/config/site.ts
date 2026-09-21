@@ -99,8 +99,8 @@ export const SITE = {
     title: "石頭屋裡的一杯手沖",
     titleHighlight: "",
     subtitle: "無菜單單品 · 南屯秘境 · 電話或粉專確認營業",
-    image: "/photos/1787653555_0ab690cedf0076392c42458dbfbe107a.jpg",
-    imageAlt: "十三咖啡手沖單品與杯皿氛圍",
+    image: "/photos/demo-hero-hand-drip.jpg",
+    imageAlt: "黑咖啡杯與萃取器材特寫（示意素材，非店家現場拍攝）",
     eyebrow: "台中南屯 · 秘境咖啡",
     primaryCta: { label: "撥打電話", href: "tel:+886917646373" },
     secondaryCta: {
@@ -145,41 +145,37 @@ export const SITE = {
       "公開資訊顯示營業時段為每日下午開店，原則上天黑即打烊。周邊道路施工與路況多變，出發前請查看 Facebook 粉專最新公告。",
     ],
     image: "/photos/20260728132541-c52a8d28.jpg",
-    imageAlt: "十三咖啡庭院與植栽",
+    imageAlt: "十三咖啡室內用餐氛圍",
   },
 
   gallery: {
     eyebrow: "空間",
     title: "手沖、室內與石頭屋",
-    lead: "先看咖啡與室內氛圍；石頭屋建築與庭園影像收在後段。公開報導整理，僅供 Demo。",
+    lead: "室內用餐與石頭屋建築、庭園影像；公開報導整理，僅供 Demo。",
     images: [
       {
-        src: "/photos/1787653555_0ab690cedf0076392c42458dbfbe107a.jpg",
-        alt: "十三咖啡手沖咖啡",
+        src: "/photos/20260728132541-c52a8d28.jpg",
+        alt: "十三咖啡室內用餐氛圍",
       },
       {
         src: "/photos/1787653556_fa7038d6a6c64a091ac8a29584296e39.jpg",
-        alt: "十三咖啡室內空間",
+        alt: "十三咖啡戶外庭園與建築",
       },
       {
         src: "/photos/ating-20200924195146_58.jpg",
-        alt: "十三咖啡手沖器具",
+        alt: "十三咖啡石頭屋外觀",
       },
       {
         src: "/photos/ating-20200924192759_51.jpg",
-        alt: "十三咖啡環境氛圍",
+        alt: "十三咖啡戶外庭園角落",
       },
       {
         src: "/photos/20260728132526-68c4a2dd.jpg",
         alt: "十三咖啡石頭屋建築外觀",
       },
       {
-        src: "/photos/20260728132541-c52a8d28.jpg",
-        alt: "十三咖啡庭院與植栽",
-      },
-      {
         src: "/photos/20260728100921-000742e0.jpg",
-        alt: "十三咖啡戶外座位區",
+        alt: "十三咖啡戶外座位與造景",
       },
     ],
   },
