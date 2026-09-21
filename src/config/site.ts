@@ -150,9 +150,17 @@ export const SITE = {
 
   gallery: {
     eyebrow: "空間",
-    title: "手沖、室內與石頭屋",
-    lead: "室內用餐與石頭屋建築、庭園影像（公開報導整理）。",
+    title: "手沖、杯皿與石頭屋",
+    lead: "首列為杯與萃取意象；石頭屋建築與庭園收在後段（公開報導整理）。",
     images: [
+      {
+        src: "/photos/demo-hero-pour-cup.jpg",
+        alt: "咖啡杯特寫（示意素材）",
+      },
+      {
+        src: "/photos/demo-hero-hand-drip.jpg",
+        alt: "手沖萃取器材與黑咖啡（示意素材）",
+      },
       {
         src: "/photos/20260728132541-c52a8d28.jpg",
         alt: "十三咖啡室內用餐氛圍",
