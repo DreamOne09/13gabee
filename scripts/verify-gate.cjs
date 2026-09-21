@@ -38,7 +38,7 @@ async function run() {
     document.documentElement.classList.contains("demo-gate-locked")
   );
 
-  const ctas = ["tel", "fb"];
+  const ctas = ["tel"];
   const blocked = {};
   for (const cta of ctas) {
     const el = page.locator(`[data-cta="${cta}"]`).first();
@@ -64,14 +64,13 @@ async function run() {
   const heroWmCount = await page.locator(".hero-watermark").count();
   const perImageWm = await page.locator(".gallery-wm").count();
 
+  const telCta = page.locator('[data-cta="tel"]').first();
+  const telHref = await telCta.getAttribute("href");
   const aboveFold = {};
-  for (const cta of ["tel", "fb"]) {
-    const el = page.locator(`[data-cta="${cta}"]`).first();
-    aboveFold[cta] = await el.evaluate((node) => {
-      const rect = node.getBoundingClientRect();
-      return rect.top >= 0 && rect.bottom <= window.innerHeight;
-    });
-  }
+  aboveFold.tel = await telCta.evaluate((node) => {
+    const rect = node.getBoundingClientRect();
+    return rect.top >= 0 && rect.bottom <= window.innerHeight;
+  });
 
   const noindexOk =
     robotsMeta.robots.includes("noindex") &&
@@ -92,7 +91,9 @@ async function run() {
       heroCtaCount,
       heroWatermarkCount: heroWmCount,
       galleryPerImageWatermarkCount: perImageWm,
-      dualCtaAboveFold: aboveFold.tel && aboveFold.fb,
+      heroTelHref: telHref,
+      telCtaAboveFold: aboveFold.tel,
+      heroFbCtaCount: await page.locator('[data-cta="fb"]').count(),
     })
   );
 

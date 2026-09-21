@@ -98,15 +98,11 @@ export const SITE = {
     layout: "immersive" as "editorial" | "split" | "immersive",
     title: "石頭屋裡的一杯手沖",
     titleHighlight: "",
-    subtitle: "無菜單單品 · 南屯秘境 · 電話或粉專確認營業",
-    image: "/photos/demo-hero-pour-cup.jpg",
-    imageAlt: "手持咖啡杯特寫（示意素材，非店家現場拍攝）",
+    subtitle: "無菜單單品 · 南屯秘境 · 出發前請致電確認營業",
+    image: "/photos/demo-hero-hand-drip.jpg",
+    imageAlt: "手沖萃取器材與黑咖啡（公開來源影像，僅供 Demo）",
     eyebrow: "台中南屯 · 秘境咖啡",
-    primaryCta: { label: "撥打電話", href: "tel:+886917646373" },
-    secondaryCta: {
-      label: "Facebook 粉專",
-      href: "https://www.facebook.com/13Gabee/",
-    },
+    primaryCta: { label: "撥打 0917-646-373", href: "tel:+886917646373" },
     highlights: ["僅手沖單品", "室內慢坐氛圍"] as string[],
   },
 
@@ -119,7 +115,7 @@ export const SITE = {
       {
         title: "石頭堆砌的秘境空間",
         description:
-          "老闆以廢棄木材、舊建材與石頭親手堆砌建築，戶外庭園與室內木質空間，常被造訪者形容為宮崎駿電影場景般的氛圍。",
+          "老闆以廢棄木材、舊建材與石頭親手堆砌建築；戶外庭園與室內木質空間，是這間南屯手沖秘境最直觀的空間印象。",
         icon: "home",
       },
       {
@@ -139,9 +135,9 @@ export const SITE = {
 
   about: {
     eyebrow: "關於",
-    title: "霍爾移動城堡般的南屯角落",
+    title: "石頭屋與手沖，藏在南屯的一隅",
     paragraphs: [
-      "十三咖啡隱身南屯，沒有明顯招牌。搬遷至現址後，老闆以回收建材與石頭親手打造這座被許多造訪者形容為「霍爾移動城堡」的空間。",
+      "十三咖啡隱身南屯，沒有明顯招牌。搬遷至現址後，老闆以回收建材與石頭親手堆砌戶外庭園與室內木質空間，讓來訪者先感受到建築與自然交錯的慢步調。",
       "公開資訊顯示營業時段為每日下午開店，原則上天黑即打烊。周邊道路施工與路況多變，出發前請查看 Facebook 粉專最新公告。",
     ],
     image: "/photos/20260728132541-c52a8d28.jpg",
@@ -151,15 +147,11 @@ export const SITE = {
   gallery: {
     eyebrow: "空間",
     title: "手沖、杯皿與石頭屋",
-    lead: "首列為杯與萃取意象；石頭屋建築與庭園收在後段（公開報導整理）。",
+    lead: "手沖與杯皿在前；石頭屋建築與庭園收在後段（公開報導整理）。",
     images: [
       {
-        src: "/photos/demo-hero-pour-cup.jpg",
-        alt: "咖啡杯特寫（示意素材）",
-      },
-      {
         src: "/photos/demo-hero-hand-drip.jpg",
-        alt: "手沖萃取器材與黑咖啡（示意素材）",
+        alt: "手沖萃取器材與黑咖啡（公開來源影像，僅供 Demo）",
       },
       {
         src: "/photos/20260728132541-c52a8d28.jpg",
@@ -272,12 +264,8 @@ export const SITE = {
 
   ctaBanner: {
     title: "準備好了就聯絡店家",
-    text: "致電確認營業，或到粉專查看路況與公告。",
-    button: { label: "撥打電話", href: "tel:+886917646373" },
-    buttonSecondary: {
-      label: "Facebook 粉專",
-      href: "https://www.facebook.com/13Gabee/",
-    },
+    text: "出發前請致電 0917-646-373 確認營業與路況。",
+    button: { label: "撥打 0917-646-373", href: "tel:+886917646373" },
   },
 
   contact: {
