@@ -27,14 +27,6 @@ const { gallery } = SITE;
               class="gallery-image"
             />
             <span class="gallery-wm">{SITE.vi.imageWatermark}</span>
-            {"source" in image && image.source && (
-              <figcaption class="gallery-credit">
-                來源：
-                <a href={image.sourceUrl} target="_blank" rel="noopener noreferrer">
-                  {image.source}
-                </a>
-              </figcaption>
-            )}
           </figure>
         ))
       }
@@ -84,35 +76,17 @@ const { gallery } = SITE;
     position: relative;
   }
 
-  .gallery-credit {
-    position: absolute;
-    right: 0.45rem;
-    bottom: 0.45rem;
-    z-index: 2;
-    margin: 0;
-    font-size: 0.58rem;
-    color: rgba(255, 255, 255, 0.85);
-    background: rgba(28, 27, 26, 0.55);
-    padding: 0.15rem 0.4rem;
-    border-radius: var(--radius-sm);
-  }
-
-  .gallery-credit a {
-    color: inherit;
-    text-decoration: underline;
-  }
-
   .gallery-wm {
     position: absolute;
-    left: 0.45rem;
-    bottom: 0.45rem;
+    right: 0.4rem;
+    bottom: 0.4rem;
     z-index: 2;
-    font-size: 0.6rem;
-    letter-spacing: 0.05em;
-    color: rgba(255, 255, 255, 0.8);
-    background: rgba(28, 27, 26, 0.5);
-    padding: 0.15rem 0.4rem;
-    border-radius: var(--radius-sm);
+    font-size: 0.5rem;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.45);
+    background: transparent;
+    padding: 0;
+    pointer-events: none;
   }
 
   .gallery-image {

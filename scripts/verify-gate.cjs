@@ -59,7 +59,7 @@ async function run() {
   await page.getByRole("button", { name: "進入提案" }).click();
   await page.locator("#demo-gate").waitFor({ state: "detached", timeout: 5000 });
 
-  const legalBanner = await page.locator(".legal-chrome-banner").textContent();
+  const legalBanner = await page.locator(".legal-chrome-summary").textContent();
 
   const aboveFold = {};
   for (const cta of ["tel", "fb"]) {

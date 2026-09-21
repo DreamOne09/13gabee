@@ -105,7 +105,7 @@ a:hover {
 
 /* scroll-margin: anchored sections (#services...) don't hide under the sticky header */
 [id] {
-  scroll-margin-top: 90px;
+  scroll-margin-top: calc(var(--site-sticky-offset) + 0.75rem);
 }
 
 /* Section eyebrow: small uppercase label with an accent dash, used above h2s */
