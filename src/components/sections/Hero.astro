@@ -26,10 +26,6 @@ const heroImage = asset(hero.image);
         <p class="hero-eyebrow">{hero.eyebrow}</p>
         <h1 id="hero-title">{hero.title}</h1>
         <p class="hero-oneline">{hero.subtitle}</p>
-
-        <ul class="hero-highlights" aria-label="特色摘要">
-          {hero.highlights.map((h) => <li>{h}</li>)}
-        </ul>
       </div>
 
       <div class="hero-actions" id="hero-reveal-cta">
@@ -40,9 +36,6 @@ const heroImage = asset(hero.image);
     </div>
   </div>
 
-  <svg class="hero-ridge" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0 70V38L180 12l150 22 190-30 170 26 160-14 210 22 180-28 200 24V70z" />
-  </svg>
 </section>
 
 <script>
@@ -102,23 +95,23 @@ const heroImage = asset(hero.image);
     inset: 0;
     background:
       radial-gradient(
-        ellipse 48% 52% at 62% 38%,
-        rgba(255, 236, 210, 0.22) 0%,
-        rgba(80, 52, 32, 0.08) 38%,
-        transparent 58%
+        ellipse 52% 58% at 58% 42%,
+        rgba(255, 220, 170, 0.2) 0%,
+        rgba(120, 78, 48, 0.1) 40%,
+        transparent 60%
       ),
       radial-gradient(
         ellipse 120% 95% at 50% 50%,
-        transparent 22%,
-        rgba(42, 26, 16, 0.55) 72%,
-        rgba(32, 20, 12, 0.88) 100%
+        transparent 20%,
+        rgba(52, 32, 18, 0.58) 70%,
+        rgba(38, 24, 14, 0.9) 100%
       ),
       linear-gradient(
-        102deg,
-        rgba(36, 22, 14, 0.92) 0%,
-        rgba(48, 30, 18, 0.62) 32%,
-        rgba(28, 18, 12, 0.18) 58%,
-        rgba(22, 14, 10, 0.45) 100%
+        108deg,
+        rgba(42, 26, 14, 0.94) 0%,
+        rgba(58, 36, 20, 0.55) 30%,
+        rgba(32, 20, 12, 0.15) 55%,
+        rgba(28, 18, 12, 0.5) 100%
       );
     mix-blend-mode: multiply;
   }
@@ -173,24 +166,6 @@ const heroImage = asset(hero.image);
     text-shadow: 0 1px 16px rgba(0, 0, 0, 0.45);
   }
 
-  .hero-highlights {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    list-style: none;
-    margin: 0 0 var(--space-3);
-    padding: 0;
-  }
-
-  .hero-highlights li {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.65rem;
-    border-radius: var(--radius-pill);
-    border: 1px solid rgba(201, 169, 98, 0.42);
-    color: var(--color-dark-text-muted);
-    background: rgba(42, 28, 18, 0.38);
-  }
-
   .hero-actions {
     display: flex;
     flex-direction: column;
@@ -239,19 +214,6 @@ const heroImage = asset(hero.image);
   .hero-cta--ghost:hover {
     background: rgba(42, 28, 18, 0.45);
     color: var(--color-dark-text);
-  }
-
-  .hero-ridge {
-    display: block;
-    width: 100%;
-    height: 70px;
-    margin-top: -1px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero-ridge path {
-    fill: var(--color-bg);
   }
 
   @media (min-width: 768px) {

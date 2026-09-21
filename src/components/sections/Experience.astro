@@ -12,11 +12,8 @@ const { experience } = SITE;
 
     <ul class="experience-list">
       {
-        experience.items.map((item, i) => (
+        experience.items.map((item) => (
           <li>
-            <span class="experience-index" aria-hidden="true">
-              {String(i + 1).padStart(2, "0")}
-            </span>
             <h3>{item.title}</h3>
             <p>{item.description}</p>
           </li>
@@ -57,13 +54,6 @@ const { experience } = SITE;
   .experience-list li {
     border-top: 1px solid var(--color-border);
     padding-top: var(--space-2);
-  }
-
-  .experience-index {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    color: var(--color-label-muted);
   }
 
   .experience-list h3 {
