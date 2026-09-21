@@ -8,12 +8,12 @@ export const SITE = {
   ogLocale: "zh_TW",
   name: "十三咖啡",
   alias: "13Gabee",
-  tagline: "南屯石頭屋秘境，只為手沖單品留一段慢時光",
+  tagline: "只為這杯手沖，走進南屯石頭屋",
   description:
-    "十三咖啡（13Gabee）台中南屯秘境石頭屋咖啡廳。無菜單手沖單品、環中路五段200號。公開資料 Demo，非店家委託。",
+    "十三咖啡（13Gabee）台中南屯手沖單品。杯皿與萃取在前，石頭屋在後。環中路五段200號。公開資料 Demo，非店家委託。",
 
   vi: {
-    imageWatermark: "Demo",
+    imageWatermark: "僅供 Demo 使用",
   },
 
   crawl: {
@@ -87,67 +87,64 @@ export const SITE = {
   hoursNote: "原則上天黑即打烊；出發前建議致電或查看粉專。",
 
   navigation: [
-    { label: "空間", href: "#gallery" },
-    { label: "關於", href: "#about" },
+    { label: "手沖", href: "#gallery" },
     { label: "體驗", href: "#experience" },
+    { label: "關於", href: "#about" },
     { label: "到店", href: "#info" },
     { label: "常見問題", href: "#faq" },
   ],
 
   hero: {
     layout: "immersive" as "editorial" | "split" | "immersive",
-    title: "石頭屋裡的一杯手沖",
+    title: "只為這杯手沖",
     titleHighlight: "",
-    subtitle: "無菜單單品 · 南屯秘境 · 出發前請致電確認營業",
+    subtitle: "南屯石頭屋 · 無菜單單品",
     image: "/photos/demo-hero-black-coffee.jpg",
-    imageAlt: "手持小杯黑咖啡與蒸氣（公開來源影像 Kiwi 樂活食旅，僅供 Demo）",
-    eyebrow: "台中南屯 · 秘境咖啡",
+    imageAlt: "手持小杯黑咖啡液（公開來源影像 Kiwi 樂活食旅，僅供 Demo 使用）",
+    eyebrow: "十三咖啡 · 台中南屯",
     primaryCta: { label: "撥打 0917-646-373", href: "tel:+886917646373" },
-    highlights: ["僅手沖單品", "室內慢坐氛圍"] as string[],
+    highlights: [] as string[],
   },
 
   experience: {
     eyebrow: "體驗",
-    title: "來這裡，只為咖啡本身",
-    intro:
-      "沒有菜單、沒有甜點搭配。入店選座，由店方依當日豆子為您沖煮——公開報導整理如下。",
+    title: "杯皿在前，空間在後",
+    intro: "無菜單。入店選座，店方依當日豆子手沖——公開報導整理。",
     items: [
       {
-        title: "石頭堆砌的秘境空間",
-        description:
-          "老闆以廢棄木材、舊建材與石頭親手堆砌建築；戶外庭園與室內木質空間，是這間南屯手沖秘境最直觀的空間印象。",
-        icon: "home",
-      },
-      {
-        title: "只專注在咖啡本身",
-        description:
-          "沒有菜單、沒有甜點搭配。來這裡的人，是為了手沖單品與可以慢下來的片刻。",
+        title: "手沖單品",
+        description: "沒有菜單、沒有甜點。來這裡，是為了一杯可以慢喝的咖啡。",
         icon: "cup",
       },
       {
-        title: "有拍就好，不要一直拍",
-        description:
-          "店內提醒「有拍就好，不要一直拍」——空間雖美，但老闆更希望客人把注意力放在咖啡與安靜的氛圍。",
+        title: "萃取與杯皿",
+        description: "虹吸、手沖壺與小杯黑咖啡液，是店內最常被談起的畫面。",
         icon: "camera",
+      },
+      {
+        title: "石頭屋當背景",
+        description:
+          "回收建材與石頭堆砌的庭園與木質室內，陪襯手沖——空間美，但咖啡仍是主角。",
+        icon: "home",
       },
     ],
   },
 
   about: {
     eyebrow: "關於",
-    title: "石頭屋與手沖，藏在南屯的一隅",
+    title: "走進石頭屋，為一杯手沖",
     paragraphs: [
-      "十三咖啡隱身南屯，沒有明顯招牌。搬遷至現址後，老闆以回收建材與石頭親手堆砌戶外庭園與室內木質空間，讓來訪者先感受到建築與自然交錯的慢步調。",
-      "公開資訊顯示營業時段為每日下午開店，原則上天黑即打烊。周邊道路施工與路況多變，出發前請查看 Facebook 粉專最新公告。",
+      "很多人為了這杯手沖來到南屯。沒有明顯招牌，石頭屋與庭園在後方襯托，讓杯中的風味留在前面。",
+      "營業以每日下午開店為主，原則上天黑即打烊。路況多變，出發前請致電或查看粉專公告。",
     ],
-    image: "/photos/20260728132541-c52a8d28.jpg",
-    imageAlt: "十三咖啡室內用餐氛圍",
+    image: "/photos/demo-siphon-brew.jpg",
+    imageAlt: "店內虹吸壺與杯皿沖煮（公開來源影像 Kiwi 樂活食旅，僅供 Demo 使用）",
   },
 
   gallery: {
-    eyebrow: "空間",
-    title: "手沖、杯皿與石頭屋",
-    lead: "手沖與杯皿在前；石頭屋建築與庭園收在後段（公開報導整理）。",
+    eyebrow: "手沖",
+    title: "杯皿與萃取",
+    lead: "黑咖啡液、虹吸與杯皿為主；石頭屋影像收在後段。",
     images: [
       {
         src: "/photos/demo-siphon-brew.jpg",
@@ -216,12 +213,12 @@ export const SITE = {
       "本站是行銷 Demo，不在網頁上捏造評價或價格。請直接到 Facebook 粉專看最新公告，或到 Google 地圖核對地址與公開留言。",
     actions: [
       {
-        label: "到粉專看公告",
+        label: "Facebook 粉專公告",
         href: "https://www.facebook.com/13Gabee/",
-        variant: "primary" as const,
+        variant: "secondary" as const,
       },
       {
-        label: "到 Google 地圖",
+        label: "Google 地圖核對地址",
         href: "https://maps.google.com/?q=十三咖啡+台中市南屯區環中路五段200號",
         variant: "secondary" as const,
       },
