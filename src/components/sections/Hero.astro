@@ -16,7 +16,7 @@ const heroImage = asset(hero.image);
     fetchpriority="high"
     decoding="async"
   />
-  <span class="hero-watermark" aria-hidden="true">{vi.imageWatermark}</span>
+  <span class="hero-watermark" aria-hidden="true">{vi.imageWatermark} · 示意影像</span>
 
   <div class="container hero-stage">
     <div class="hero-text" id="hero-beat-root">
@@ -29,11 +29,11 @@ const heroImage = asset(hero.image);
       </ul>
 
       <div class="hero-actions">
-        <a class="button" href={hero.primaryCta.href} data-cta="tel">
+        <a class="button button-hero-primary" href={hero.primaryCta.href} data-cta="tel">
           {hero.primaryCta.label}
         </a>
         <a
-          class="button button-hero-alt"
+          class="button button-hero-secondary"
           href={hero.secondaryCta.href}
           target="_blank"
           rel="noopener noreferrer"
@@ -172,40 +172,49 @@ const heroImage = asset(hero.image);
     z-index: 2;
   }
 
-  @media (min-width: 768px) {
-    .hero-actions {
-      flex-direction: row;
-      flex-wrap: wrap;
-      max-width: 28rem;
-    }
-
-    .hero-actions .button:first-child {
-      flex: 1.15 1 10rem;
-    }
-
-    .hero-actions .button:last-child {
-      flex: 1 1 9rem;
-    }
-  }
-
   .hero-actions .button {
-    min-height: 48px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     width: 100%;
-    color: var(--color-on-accent);
   }
 
-  .hero-actions .button:hover {
-    color: var(--color-on-accent);
-  }
-
-  .button-hero-alt {
+  .button-hero-primary {
+    min-height: 52px;
+    font-size: 1rem;
+    font-weight: 700;
     background: var(--gradient-accent);
     box-shadow: var(--shadow-glow);
     border: none;
+    color: var(--color-on-accent);
+  }
+
+  .button-hero-primary:hover {
+    color: var(--color-on-accent);
+    filter: brightness(1.05);
+  }
+
+  .button-hero-secondary {
+    min-height: 44px;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    background: rgba(26, 22, 18, 0.35);
+    border: 1px solid rgba(244, 237, 228, 0.38);
+    color: var(--color-dark-text);
+    box-shadow: none;
+  }
+
+  .button-hero-secondary:hover {
+    background: rgba(26, 22, 18, 0.5);
+    color: var(--color-dark-text);
+  }
+
+  @media (min-width: 768px) {
+    .hero-actions {
+      flex-direction: column;
+      max-width: 18rem;
+    }
   }
 
   .hero-ridge {
